@@ -5,10 +5,7 @@ import { motion } from "framer-motion";
 import ProjectGallery from "@/pages/components/ui/ProjectGallery";
 import { PROJECTS } from "@/data/projects";
 import { TECH_LOGOS } from "@/data/techLogos";
-
-// resolve asset respeitando o base do Vite (ex.: /portfolio/)
-const asset = (p: string) => new URL(p, import.meta.env.BASE_URL).href;
-const toAssets = (arr?: string[]) => (arr ? arr.map(asset) : arr);
+import { assets } from "@/utils/asset"; // 👈 importe o plural
 
 export default function Projects() {
   return (
@@ -56,7 +53,7 @@ export default function Projects() {
                 </p>
 
                 {/* galeria (urls resolvidas para GitHub Pages) */}
-                <ProjectGallery images={toAssets(p.images)} />
+                <ProjectGallery images={assets(p.images)} /> {/* 👈 aqui usa o util */}
 
                 {/* narrativa compacta */}
                 <div className="grid md:grid-cols-3 gap-4 mt-2">
@@ -145,26 +142,6 @@ export default function Projects() {
                       <Github className="w-4 h-4" /> Código
                     </a>
                   ) : null}
-
-                  {/* Se quiser reativar o CTA de demo privada, descomente e ajuste */}
-                  {/*
-                  {p.demo ? (
-                    <a
-                      href={p.demo}
-                      className="inline-flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-200 hover:underline"
-                    >
-                      <ExternalLink className="w-4 h-4" /> Demo
-                    </a>
-                  ) : (
-                    <a
-                      href={SOCIALS.email}
-                      className="inline-flex items-center gap-2 text-sm rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                      title="Projeto privado — posso mostrar um recorte por call"
-                    >
-                      <ExternalLink className="w-4 h-4" /> Solicitar demo privada
-                    </a>
-                  )}
-                  */}
                 </div>
               </Card>
             </motion.div>

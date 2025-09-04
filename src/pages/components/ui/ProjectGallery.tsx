@@ -1,7 +1,7 @@
 // src/pages/components/ui/ProjectGallery.tsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-const asset = (p: string) => new URL(p, import.meta.env.BASE_URL).href;
+import { asset } from "@/utils/asset";
 
 export default function ProjectGallery({ images = [] }: { images?: string[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
