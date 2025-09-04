@@ -34,8 +34,8 @@ export const PROJECTS: Project[] = [
       { label: "Redução de chamados por incidentes", value: "≈ 97%" },
     ],
     images: [
-      "/images/monitor-marketplaces-1.jpg",
-      "/images/monitor-marketplaces-2.jpg",
+      "images/monitor-marketplaces-1.jpg",
+      "images/monitor-marketplaces-2.jpg",
     ],
     visibility: "private",
     clientKind: "Varejo / E-commerce",
@@ -58,8 +58,8 @@ export const PROJECTS: Project[] = [
       { label: "Redução de chamados por incidentes", value: "≈ 93%" },
     ],
     images: [
-      "/images/fulfillment-notas-1.jpg",
-      "/images/fulfillment-notas-2.jpg",
+      "images/fulfillment-notas-1.jpg",
+      "images/fulfillment-notas-2.jpg",
     ],
     visibility: "private",
     clientKind: "Logística / E-commerce",

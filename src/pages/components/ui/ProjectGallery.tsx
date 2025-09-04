@@ -1,6 +1,7 @@
 // src/pages/components/ui/ProjectGallery.tsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+const asset = (p: string) => new URL(p, import.meta.env.BASE_URL).href;
 
 export default function ProjectGallery({ images = [] }: { images?: string[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
@@ -16,7 +17,7 @@ export default function ProjectGallery({ images = [] }: { images?: string[] }) {
             whileHover={{ scale: 1.02 }}
             className="overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-400/40 dark:focus:ring-zinc-600/50"
           >
-            <img src={src} alt={`Projeto ${i + 1}`} className="w-full h-32 object-cover" loading="lazy" />
+            <img src={asset(src)} alt={`Projeto ${i + 1}`} className="w-full h-32 object-cover" loading="lazy" />
           </motion.button>
         ))}
       </div>
@@ -30,7 +31,7 @@ export default function ProjectGallery({ images = [] }: { images?: string[] }) {
           >
             <motion.img
               key={images[openIdx]}
-              src={images[openIdx]}
+              src={asset(images[openIdx])}
               alt="Preview"
               className="max-h-[85vh] max-w-[92vw] rounded-2xl border border-white/10 shadow-2xl"
               initial={{ scale: 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.96, opacity: 0 }}
