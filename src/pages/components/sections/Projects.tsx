@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import ProjectGallery from "@/pages/components/ui/ProjectGallery";
 import { PROJECTS } from "@/data/projects";
 import { TECH_LOGOS } from "@/data/techLogos";
-import { assets } from "@/utils/asset"; // 👈 importe o plural
 
 export default function Projects() {
   return (
@@ -52,8 +51,8 @@ export default function Projects() {
                   {p.summary}
                 </p>
 
-                {/* galeria (urls resolvidas para GitHub Pages) */}
-                <ProjectGallery images={assets(p.images)} /> {/* 👈 aqui usa o util */}
+                {/* galeria (deixe as imagens cruas; ProjectGallery faz o resolve) */}
+                <ProjectGallery images={p.images} />
 
                 {/* narrativa compacta */}
                 <div className="grid md:grid-cols-3 gap-4 mt-2">
