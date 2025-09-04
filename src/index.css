@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* habilita o prefixo `dark:` por classe .dark (Tailwind v4) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root { color-scheme: light dark; }
+html, body, #root { height: 100%; }
+
+/* ========= Aurora =========
+   A ideia: um gradient grande que se move lento + blur,
+   recortado por uma máscara (para criar ondas). */
+@keyframes aurora-shift {
+  0%, 100% { transform: translate3d(-10%, -5%, 0) rotate(0deg); filter: blur(40px); }
+  50% { transform: translate3d(10%, 5%, 0) rotate(2deg); filter: blur(60px); }
+}
+
+/* Elemento que pinta a aurora */
+.aurora-mask {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(60% 40% at 20% 30%, rgba(99,102,241,0.35), transparent 60%),
+              radial-gradient(60% 40% at 80% 20%, rgba(244,114,182,0.35), transparent 60%),
+              radial-gradient(60% 50% at 50% 80%, rgba(45,212,191,0.35), transparent 60%);
+  animation: aurora-shift 12s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Tema escuro: reduz opacidades e muda blending p/ ficar mais suave */
+.dark .aurora-mask {
+  background: radial-gradient(60% 40% at 20% 30%, rgba(129,140,248,0.25), transparent 60%),
+              radial-gradient(60% 40% at 80% 20%, rgba(251,113,133,0.20), transparent 60%),
+              radial-gradient(60% 50% at 50% 80%, rgba(34,211,238,0.22), transparent 60%);
+  mix-blend-mode: screen;
+}
+
+/* respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-mask { animation: none; }
+}
+
+/* chips maiores só na seção de tecnologias, sem mexer nos outros Badges */
+#tecnologias .group.inline-flex { padding: 0.5rem 0.75rem; }
+#tecnologias .group.inline-flex img { width: 18px; height: 18px; }
+#tecnologias .group.inline-flex span { font-size: 0.8rem; }
