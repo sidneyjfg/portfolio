@@ -57,11 +57,11 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="text-3xl font-semibold text-zinc-900 dark:text-white">100%</div>
-                  <div className="text-xs text-zinc-500">satisfação</div>
+                  <div className="text-xs text-zinc-500">Personalizado</div>
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap gap-2">
-                {["React", "Node", "TypeScript", "AWS", "PostgreSQL"].map((t) => (
+                {["React", "Node", "TypeScript", "AWS", "Mysql", "Python"].map((t) => (
                   <Badge key={t}>{t}</Badge>
                 ))}
               </div>
