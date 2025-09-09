@@ -20,54 +20,54 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
-  {
-    title: "Monitor de Pedidos & Produtos (Marketplaces)",
-    summary:
-      "Automações que monitoram pedidos sem integração e divergências de estoque/preço, com alertas e reprocessos.",
-    pain:
-      "Pedidos ficavam parados sem integração e havia divergências recorrentes de estoque/preço entre ERP e marketplaces.",
-    solution:
-      "Serviço Node/Express com jobs agendados em containers Docker. Consulta Plugg.To/AnyMarket e ERP, reconcilia dados, detecta pedidos não integrados e divergências, e notifica o time (Google). Janelas de busca configuráveis e trilha de auditoria em MySQL.",
-    integrations: ["Nérus ERP", "Plugg.To", "AnyMarket", "Google (Chat/Email)"],
-    tech: ["TypeScript", "Express.js", "Docker", "Linux", "MySQL"],
-    metrics: [
-      { label: "Redução de chamados por incidentes", value: "≈ 97%" },
-    ],
-    images: [
-      "images/monitor-marketplaces-1.jpg",
-      "images/monitor-marketplaces-2.jpg",
-    ],
-    visibility: "private",
-    clientKind: "Varejo / E-commerce",
-    nda: true,
-    role: "Dev/Automation",
-    github: null,
-    demo: null,
-  },
-  {
-    title: "Monitor de Notas Fulfillment (ERP ↔ Marketplace)",
-    summary:
-      "Serviço que verifica notas fulfillment não integradas e alerta time para correções rápidas.",
-    pain:
-      "Notas fulfillment ficavam pendentes ou não integravam no ERP, afetando SLA de expedição e conciliação fiscal.",
-    solution:
-      "Job em Node rodando em Docker (Linux) que cruza ERP e canais fulfillment, identifica lacunas e notifica no Google. Parametrização de período de busca e relatórios de inconsistências.",
-    integrations: ["Nérus ERP", "Fulfillment (marketplaces)", "Google (Chat/Email)"],
-    tech: ["Node.js", "Docker", "Linux", "MySQL"],
-    metrics: [
-      { label: "Redução de chamados por incidentes", value: "≈ 93%" },
-    ],
-    images: [
-      "images/fulfillment-notas-1.jpg",
-      "images/fulfillment-notas-2.jpg",
-    ],
-    visibility: "private",
-    clientKind: "Logística / E-commerce",
-    nda: true,
-    role: "Dev/Automation",
-    github: null,
-    demo: null,
-  },
+  // {
+  //   title: "Monitor de Pedidos & Produtos (Marketplaces)",
+  //   summary:
+  //     "Automações que monitoram pedidos sem integração e divergências de estoque/preço, com alertas e reprocessos.",
+  //   pain:
+  //     "Pedidos ficavam parados sem integração e havia divergências recorrentes de estoque/preço entre ERP e marketplaces.",
+  //   solution:
+  //     "Serviço Node/Express com jobs agendados em containers Docker. Consulta Plugg.To/AnyMarket e ERP, reconcilia dados, detecta pedidos não integrados e divergências, e notifica o time (Google). Janelas de busca configuráveis e trilha de auditoria em MySQL.",
+  //   integrations: ["Nérus ERP", "Plugg.To", "AnyMarket", "Google (Chat/Email)"],
+  //   tech: ["TypeScript", "Express.js", "Docker", "Linux", "MySQL"],
+  //   metrics: [
+  //     { label: "Redução de chamados por incidentes", value: "≈ 97%" },
+  //   ],
+  //   images: [
+  //     "images/monitor-marketplaces-1.jpg",
+  //     "images/monitor-marketplaces-2.jpg",
+  //   ],
+  //   visibility: "private",
+  //   clientKind: "Varejo / E-commerce",
+  //   nda: true,
+  //   role: "Dev/Automation",
+  //   github: null,
+  //   demo: null,
+  // },
+  // {
+  //   title: "Monitor de Notas Fulfillment (ERP ↔ Marketplace)",
+  //   summary:
+  //     "Serviço que verifica notas fulfillment não integradas e alerta time para correções rápidas.",
+  //   pain:
+  //     "Notas fulfillment ficavam pendentes ou não integravam no ERP, afetando SLA de expedição e conciliação fiscal.",
+  //   solution:
+  //     "Job em Node rodando em Docker (Linux) que cruza ERP e canais fulfillment, identifica lacunas e notifica no Google. Parametrização de período de busca e relatórios de inconsistências.",
+  //   integrations: ["Nérus ERP", "Fulfillment (marketplaces)", "Google (Chat/Email)"],
+  //   tech: ["Node.js", "Docker", "Linux", "MySQL"],
+  //   metrics: [
+  //     { label: "Redução de chamados por incidentes", value: "≈ 93%" },
+  //   ],
+  //   images: [
+  //     "images/fulfillment-notas-1.jpg",
+  //     "images/fulfillment-notas-2.jpg",
+  //   ],
+  //   visibility: "private",
+  //   clientKind: "Logística / E-commerce",
+  //   nda: true,
+  //   role: "Dev/Automation",
+  //   github: null,
+  //   demo: null,
+  // },
   {
     title: "API iFood ↔ ERP (multi-loja, idempotente)",
     summary:
