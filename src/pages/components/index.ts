@@ -6,6 +6,7 @@ export { default as Card } from "./ui/Card";
 export { default as IconBullet } from "./ui/IconBullet";
 export { default as ThemeToggle } from "./ui/ThemeToggle";
 export { default as BackgroundFX } from "./ui/BackgroundFX";
+export { HublyCaseScreens, HublyHeroMockup } from "./ui/HublyMockups";
 
 // layout
 export { default as NavBar } from "./layout/NavBar";

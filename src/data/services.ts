@@ -1,6 +1,6 @@
 // src/data/services.ts
 import type { ComponentType } from "react";
-import { Layout, Workflow, Layers } from "lucide-react";
+import { BarChart3, Braces, PanelsTopLeft, Workflow } from "lucide-react";
 
 export type Service = {
   icon: ComponentType<{ className?: string }>;
@@ -11,37 +11,48 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    icon: Layout,
-    title: "Criação de Sites",
-    description:
-      "Landing pages e sites institucionais modernos, rápidos e com SEO pronto para campanhas.",
-    bullets: [
-      "Next.js/React + Tailwind",
-      "Design responsivo e acessível",
-      "Formulários, analytics e SEO técnico",
-    ],
-  },
-  {
     icon: Workflow,
-    title: "Automações",
+    title: "Automações de processos",
     description:
-      "Bots e rotinas para eliminar tarefas repetitivas e reduzir erros operacionais.",
+      "Rotinas para reduzir tarefas repetitivas, alertas manuais e conferências que tomam tempo da equipe.",
     bullets: [
-      "Jobs agendados (Cron/Queues)",
-      "Scraping, relatórios e notificações",
-      "Orquestração com Docker/Linux",
+      "Dados entre sistemas, planilhas e WhatsApp",
+      "Relatórios e notificações automáticas",
+      "Regras de negócio adaptadas ao seu fluxo",
     ],
   },
   {
-    icon: Layers,
+    icon: PanelsTopLeft,
+    title: "Sistemas internos",
+    description:
+      "Ferramentas para organizar agenda, clientes, equipe, chamados, pedidos e qualquer processo operacional.",
+    bullets: [
+      "Painéis para equipe e gestão",
+      "Controle de status, histórico e permissões",
+      "Fluxos pensados para uso diário",
+    ],
+  },
+  {
+    icon: Braces,
     title: "Integrações de API",
     description:
-      "Conecto sistemas, ERPs e marketplaces para dados consistentes de ponta a ponta.",
+      "Conexão entre sistemas internos, ferramentas externas, ERPs, marketplaces e bancos de dados.",
     bullets: [
       "REST/Webhooks",
       "Mapeamento e transformação de dados",
       "Monitoramento e retries",
-      "Integração com marketplaces"
+      "Redução de digitação duplicada",
+    ],
+  },
+  {
+    icon: BarChart3,
+    title: "Portais e dashboards",
+    description:
+      "Visão clara de indicadores, pendências e movimentações para decisões com menos achismo.",
+    bullets: [
+      "Indicadores operacionais",
+      "Histórico e filtros por período",
+      "Acompanhamento em tempo real",
     ],
   },
 ];

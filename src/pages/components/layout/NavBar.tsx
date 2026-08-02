@@ -1,7 +1,7 @@
 import { SECTIONS } from "@/data";
 import { Container, ThemeToggle } from "@/pages/components";
 import { classNames } from "@/lib/classNames";
-import type { Theme } from "@/pages/pages/hooks/useTheme";
+import type { Theme } from "@/pages/hooks/useTheme";
 
 export default function NavBar({
   active,
@@ -15,21 +15,28 @@ export default function NavBar({
   setTheme: (t: Theme) => void;
 }) {
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 border-b border-zinc-200/70 dark:border-zinc-800/70 bg-white/70 dark:bg-zinc-950/50 backdrop-blur-xl">
+    <nav className="fixed top-0 inset-x-0 z-50 border-b border-zinc-200/70 bg-white/80 backdrop-blur-xl dark:border-zinc-800/70 dark:bg-zinc-950/70">
       <Container>
         <div className="h-16 flex items-center justify-between">
-          <div className="font-bold tracking-tight text-zinc-900 dark:text-white">Sidney Junio</div>
-          <div className="hidden md:flex items-center gap-6">
+          <button
+            className="font-bold tracking-tight text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 dark:text-white"
+            onClick={() => onClickSection("hero")}
+            type="button"
+          >
+            Sidney Junio
+          </button>
+          <div className="hidden lg:flex items-center gap-6">
             {SECTIONS.map((s) => (
               <button
                 key={s.id}
                 onClick={() => onClickSection(s.id)}
                 className={classNames(
-                  "text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400/40 dark:focus:ring-zinc-600/50 rounded-md",
+                  "rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50",
                   active === s.id
-                    ? "text-zinc-900 dark:text-zinc-100"
+                    ? "text-zinc-950 dark:text-zinc-100"
                     : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
                 )}
+                type="button"
               >
                 {s.label}
               </button>

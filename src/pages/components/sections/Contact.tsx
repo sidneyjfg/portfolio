@@ -1,44 +1,52 @@
-import { Container, SectionTitle, Card, IconBullet } from "@/pages/components";
+import { Download, Github, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Card, Container, SectionTitle } from "@/pages/components";
 import { SOCIALS } from "@/data";
-import { Mail, Phone, MapPin, Github } from "lucide-react";
+
+const contactLinks = [
+  { label: "LinkedIn", href: SOCIALS.linkedin, icon: Linkedin },
+  { label: "GitHub", href: SOCIALS.github, icon: Github },
+  { label: "Currículo PDF", href: SOCIALS.resume, icon: Download },
+  { label: "E-mail", href: SOCIALS.email, icon: Mail },
+];
 
 export default function Contact() {
   return (
     <section id="contato" className="py-16 transition-colors">
       <Container>
-        <SectionTitle>Vamos Conversar</SectionTitle>
-        <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl">
-          Tem um projeto em mente ou quer otimizar processos com automação/integração?
-          Vamos tirar do papel.
-        </p>
-
-        <div className="mt- grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="p-5">
-            <IconBullet icon={<Mail className="w-5 h-5" />}>sidneyjunio191@gmail.com </IconBullet>
-          </Card>
-          <Card className="p-5">
-            <IconBullet icon={<Phone className="w-5 h-5" />}>{SOCIALS.phoneLabel}</IconBullet>
-          </Card>
-          <Card className="p-5">
-            <IconBullet icon={<MapPin className="w-5 h-5" />}>{SOCIALS.location}</IconBullet>
-          </Card>
-          <Card className="p-5">
-            <div className="flex items-start gap-3">
-              <Github className="w-5 h-5 mt-1" />
-              <a href={SOCIALS.github} className="text-zinc-700 dark:text-zinc-200 hover:underline">
-                /sidneyjfg
-              </a>
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <SectionTitle>Contato</SectionTitle>
+            <p className="max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">
+              Aberto a conversas para vagas Full Stack, Backend, integrações, produto interno, SaaS e contextos com operação técnica.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3 text-sm text-zinc-600 dark:text-zinc-300">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                {SOCIALS.location}
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                {SOCIALS.phoneLabel}
+              </span>
             </div>
-          </Card>
-        </div>
+          </div>
 
-        <div className="mt-8">
-          <a
-            href={SOCIALS.email}
-            className="inline-flex items-center gap-2 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 px-6 py-3 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-zinc-400/40 dark:focus:ring-zinc-600/50"
-          >
-            <Mail className="w-4 h-4" /> Iniciar conversa por e-mail
-          </a>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {contactLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Card key={item.label} className="p-5">
+                  <a
+                    href={item.href}
+                    className="flex items-center gap-3 text-zinc-800 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 dark:text-zinc-100"
+                  >
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                    <span className="font-semibold">{item.label}</span>
+                  </a>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>

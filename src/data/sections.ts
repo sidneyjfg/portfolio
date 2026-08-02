@@ -1,8 +1,8 @@
 export const SECTIONS = [
-  { id: "hero", label: "Início" },
-  { id: "servicos", label: "Serviços" },
-  { id: "projetos", label: "Projetos" },
-  { id: "tecnologias", label: "Tecnologias" },
+  { id: "destaques", label: "Destaques" },
   { id: "experiencia", label: "Experiência" },
+  { id: "projetos", label: "Projetos" },
+  { id: "stack", label: "Stack" },
+  { id: "formacao", label: "Formação" },
   { id: "contato", label: "Contato" },
 ] as const;
